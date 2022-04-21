@@ -9,9 +9,6 @@ param(
 )
 
 <# 
-
-Транспортный сервис для SSO/Blitz
-
 пререквизиты:
 Oracle Database Provider .Net (ODP.Net)
 Microsoft.PowerShell.SecretManagement
@@ -31,7 +28,6 @@ $source_login = "smlogin"
 
 <# 
 
-Код транспортного сервиса 
 ----------------------------------------------------------------------------------------------------------------
 #>
 
@@ -49,7 +45,7 @@ $identity = [Security.Principal.WindowsIdentity]::GetCurrent()
 
 # функция траспортного сервиса
 
-function BlitzTransportService {
+function TransportService {
 
   Export-Clixml -InputObject "Running" -Path "$workingDirectory\\control.xml"
 
@@ -175,7 +171,7 @@ if( $Start ) {
 
 if ( $Service ) {
   if($identity.IsSystem) {
-    BlitzTransportService
+    TransportService
   }
   else{
     Write-Output "Key [-Service] is for SCM only! Use key [-Console] instead."
@@ -212,7 +208,7 @@ if( $Remove ) {
 }
 
 if( $Console ) {
-  BlitzTransportService
+  TransportService
   #Start-Process "powershell.exe" -ArgumentList("-c & '$scriptSelfName' -Console -Service")
 }
 
@@ -227,11 +223,11 @@ Write-Output @"
 Справка:
 --------
 
-Сервис пересылки сообщений SSO/Blitz
+Сервис пересылки сообщений 
 Разработка: Волчков Михаил
 
 Использование:
-    BlitzTransport.ps1 [ключ]
+    ServiceExample.ps1 [ключ]
 
 Ключи:
     -Setup      - инсталляция сервиса, требует административных привилегий
