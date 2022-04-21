@@ -31,8 +31,8 @@ $source_login = "smlogin"
 ----------------------------------------------------------------------------------------------------------------
 #>
 
-$serviceName = "BlitzTransport"
-$serviceDisplayName = "SSO/Blitz Messaging Transport Service"
+$serviceName = "ServiceExample"
+$serviceDisplayName = "Messaging Transport Service"
 
 # !! Две косых черты - обязательно для кода на CSharp !!
 $workingDirectory = "C:\\Users\\workingDir"
