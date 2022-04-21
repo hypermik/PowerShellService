@@ -22,12 +22,12 @@ Microsoft.PowerShell.SecretStore
 $ODPNETPath = "C:\app\oracle\product\18.0.0\client_1\ODP.NET\managed\common\Oracle.ManagedDataAccess.dll"
 $cycle_pause = 15 # пауза в секундах
 
-$destination_tns = "(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = msvo-oradevnew02.corp.ingos.ru)(PORT = 1521))) (CONNECT_DATA = (SERVICE_NAME = ORADEV)))"
-$destination_login = "aislogin"
+$destination_tns = "(DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = some.host.name)(PORT = 1521))) (CONNECT_DATA = (SERVICE_NAME = SMNAME)))"
+$destination_login = "smlogin"
 
 $source_tns = @(
 )
-$source_login = "aislogin"
+$source_login = "smlogin"
 
 <# 
 
